@@ -76,4 +76,9 @@ public class AppTest
             assertEquals("Negatives not allowed: -1 -3", exception.getMessage());
         }
     }
+
+    @Test 
+    public void testBiggerThan1000(){
+        assertEquals(2, app.Add("//;\n1001;2"));
+    }
 }

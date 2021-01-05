@@ -11,7 +11,7 @@ public class App
        String neg = "";
        for(String number : num){
            if(Integer.parseInt(number)< 0) neg = neg+" "+number;
-           res+=Integer.parseInt(number); 
+           if(Integer.parseInt(number)< 1000) res+=Integer.parseInt(number); 
        }
        if(neg != ""){
         throw new IllegalArgumentException("Negatives not allowed:" + neg);
@@ -44,6 +44,6 @@ public class App
     {
         App app = new App();
 
-        System.out.println( "Hello World!  " + app.Add("1\n2,3\n4") );
+        System.out.println( "Hello World!  " + app.Add("//;\n1001;2") );
     }
 }
