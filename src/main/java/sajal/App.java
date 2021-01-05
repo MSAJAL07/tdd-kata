@@ -16,7 +16,14 @@ public class App
     public int Add(String str){
         if (str == "") return 0;
         else{
-            String num[]= str.replaceAll("\n", ",").split(",");
+            String d = ",";
+            if(str.matches("//(.*)\n(.*)")){
+                d = Character.toString(str.charAt(2));
+                System.out.println(d);
+                str = str.substring(4);
+                System.out.println(str);
+            }
+            String num[]= str.replaceAll("\n", d).split(d);
             return sum(num);
             
         }
