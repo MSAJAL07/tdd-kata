@@ -39,4 +39,10 @@ public class AppTest
     public void testTwo(){
         assertEquals(5, app.Add("2,3"));
     }
+
+
+    @Test 
+    public void testMultiple(){
+        assertEquals(10, app.Add("1,2,3,4"));
+    }
 }
