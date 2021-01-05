@@ -62,7 +62,7 @@ public class AppTest
         try{
             app.Add("//;\n-1;2");
         }catch(Exception exception){
-            assertEquals("negatives not allowed : -1", exception.getMessage());
+            assertEquals("Negatives not allowed: -1", exception.getMessage());
         }
     }
 }
