@@ -1,5 +1,4 @@
 package sajal;
-
 /**
  * Hello world!
  *
@@ -25,10 +24,18 @@ public class App
         else{
             String d = ",";
             if(str.matches("//(.*)\n(.*)")){
-                d = Character.toString(str.charAt(2));
-                System.out.println(d);
-                str = str.substring(4);
-                System.out.println(str);
+                if(str.matches("//\\[(.*)\\]\n(.*)")){
+                    int x = str.indexOf("[");
+                    int y = str.indexOf("]");
+                    d = str.substring(x+1,y);
+                    str = str.substring(str.indexOf("\n")+1);
+                  str =  str.replaceAll("\\*\\*\\*", ",");
+                  d= ",";
+                }else{
+                    d = Character.toString(str.charAt(2));
+                    str = str.substring(4);
+                }
+               
             }
             String num[]= str.replaceAll("\n", d).split(d);
             return sum(num);
@@ -44,6 +51,6 @@ public class App
     {
         App app = new App();
 
-        System.out.println( "Hello World!  " + app.Add("//;\n1001;2") );
+        System.out.println( "Hello World!  " + app.Add("//[***]\n1***2***3") );
     }
 }

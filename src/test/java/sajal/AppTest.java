@@ -81,4 +81,9 @@ public class AppTest
     public void testBiggerThan1000(){
         assertEquals(2, app.Add("//;\n1001;2"));
     }
+
+    @Test 
+    public void testDelimitersAnyLength(){
+        assertEquals(6, app.Add("//[***]\n1***2***3"));
+    }
 }
