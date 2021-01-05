@@ -65,4 +65,15 @@ public class AppTest
             assertEquals("Negatives not allowed: -1", exception.getMessage());
         }
     }
+
+
+
+    @Test 
+    public void testNegativeNumberMultiple(){
+        try{
+            app.Add("//;\n-1;2;-3");
+        }catch(Exception exception){
+            assertEquals("Negatives not allowed: -1 -3", exception.getMessage());
+        }
+    }
 }
