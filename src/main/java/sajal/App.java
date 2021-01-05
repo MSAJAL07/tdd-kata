@@ -16,7 +16,7 @@ public class App
     public int Add(String str){
         if (str == "") return 0;
         else{
-            String num[]= str.split(",");
+            String num[]= str.replaceAll("\n", ",").split(",");
             return sum(num);
             
         }
@@ -30,6 +30,6 @@ public class App
     {
         App app = new App();
 
-        System.out.println( "Hello World!  " + app.Add("2,3") );
+        System.out.println( "Hello World!  " + app.Add("1\n2,3\n4") );
     }
 }
