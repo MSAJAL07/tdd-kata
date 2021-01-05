@@ -55,4 +55,15 @@ public class AppTest
     public void testDifferentDlimiters(){
         assertEquals(3, app.Add("//;\n1;2"));
     }
+
+
+    @Test 
+    public void testNegativeNumberOne(){
+        try{
+            app.Add("//;\n-1;2");
+        }catch(Exception exception){
+            assertEquals("negatives not allowed : -1", exception.getMessage());
+        }
+        assertEquals(3, app.Add("//;\n-1;2"));
+    }
 }
