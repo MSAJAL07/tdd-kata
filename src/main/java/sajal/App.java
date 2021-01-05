@@ -6,16 +6,18 @@ package sajal;
  */
 public class App 
 {
-   
+   private int sum(String num[]){
+       int res=0;
+       for(String number : num)
+           res+=Integer.parseInt(number);   
+       return res;
+   }
 
     public int Add(String str){
         if (str == "") return 0;
         else{
             String num[]= str.split(",");
-            if(num.length==1)
-                return Integer.parseInt(num[0]);
-            else
-                return Integer.parseInt(num[0]) + Integer.parseInt(num[1]);
+            return sum(num);
             
         }
     }
