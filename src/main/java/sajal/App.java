@@ -8,9 +8,13 @@ public class App
 {
    private int sum(String num[]){
        int res=0;
+       String neg = "";
        for(String number : num){
-           if(Integer.parseInt(number)> 0) res+=Integer.parseInt(number);
-           else throw new IllegalArgumentException("Negatives not allowed: " + Integer.parseInt(number));
+           if(Integer.parseInt(number)< 0) neg = neg+" "+number;
+           res+=Integer.parseInt(number); 
+       }
+       if(neg != ""){
+        throw new IllegalArgumentException("Negatives not allowed:" + neg);
        }
               
        return res;
