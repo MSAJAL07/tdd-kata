@@ -64,6 +64,5 @@ public class AppTest
         }catch(Exception exception){
             assertEquals("negatives not allowed : -1", exception.getMessage());
         }
-        assertEquals(3, app.Add("//;\n-1;2"));
     }
 }
