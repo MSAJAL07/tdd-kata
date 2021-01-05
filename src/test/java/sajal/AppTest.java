@@ -50,4 +50,9 @@ public class AppTest
     public void testNewLine(){
         assertEquals(10, app.Add("1\n2,3\n4"));
     }
+
+    @Test 
+    public void testDifferentDlimiters(){
+        assertEquals(3, app.Add("//;\n1;2"));
+    }
 }
